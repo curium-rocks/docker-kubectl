@@ -1,11 +1,12 @@
 FROM alpine:latest
 
-RUN addgroup -S kubectl
+RUN addgroup -S kubectl --gid 2000
 RUN adduser \
     --disabled-password \
     --gecos "" \
     --home "/home/kubectl" \
     --ingroup kubectl \
+    --uid 2000 \
     kubectl
 
 RUN apk add --no-cache curl
@@ -14,3 +15,4 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN chown kubectl:kubectl kubectl && chmod +x kubectl
 WORKDIR /home/kubectl
 USER kubectl
+ENV PATH /usr/local/bin:$PATH
