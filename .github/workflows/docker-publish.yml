@@ -1,5 +1,5 @@
 ---
-name: 'Build Alpine Zulu JRE Base'
+name: 'Build Docker Kubectl'
 on:
   schedule:
     - cron: '22 4 * * *'
