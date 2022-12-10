@@ -10,3 +10,4 @@ RUN adduser \
     kubectl
 
 RUN apk add --no-cache kubectl --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
+USER kubectl
