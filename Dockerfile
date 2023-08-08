@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.18.3
 
 RUN addgroup -S kubectl --gid 2000
 RUN adduser \
